@@ -11,5 +11,5 @@ struct OTPModal {
     
     var countryCode: String?
     var countryName : String?
-    var phoneNumber : String?
+    var phoneNumber : String = ""
 }

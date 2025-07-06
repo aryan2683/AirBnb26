@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class LoginViewModal : ObservableObject {
+class LoginViewModal : ObservableObject{
     @Published var otpModal = OTPModal()
     
     func getCountryCode() {

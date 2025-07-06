@@ -2,11 +2,11 @@ import SwiftUI
 
 struct LogInView: View {
     @Environment(\.dismiss) var dismiss
-
+@StateObject private var viewModel = LoginViewModal()
     var body: some View {
         NavigationStack {
             VStack {
-                Text("hello")
+                InfoBox(headline: .countryRegion, countryCode: viewModel.otpModal.countryName ?? "", phoneNumber: $viewModel.otpModal.phoneNumber)
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -29,6 +29,7 @@ struct LogInView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden()
         
     }
 }
