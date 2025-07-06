@@ -11,5 +11,6 @@ extension String {
     static let airbnbLogo = "airbnbClear"
     static let loginOrSignIn = "Log in or sign up"
     static let countryRegion = "Country/Region"
+    static let callDisclaimerText = "We'll call or text you to confirm your number.Standard message and data rates apply."
 }
 

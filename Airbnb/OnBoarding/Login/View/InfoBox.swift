@@ -55,7 +55,7 @@ struct InfoBox: View {
                     .focused($focusedField, equals: .phoneNumber)
                     .keyboardType(.phonePad)
                     .padding(.top, (focusedField == .phoneNumber || !phoneNumber.isEmpty) ? 12 : 0)
-                    .padding(8)
+                    .padding(10)
                     .accentColor(.black)
             }
             .background(
@@ -65,6 +65,21 @@ struct InfoBox: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
+        
+        VStack(alignment: .leading,spacing : 14){
+            Text(verbatim : .callDisclaimerText)
+                .font(.plusJakarta(weight: .regular, size: 12))
+                .foregroundStyle(.black.opacity(0.7))
+                .padding(.vertical , 6)
+                .padding(.horizontal,8)
+                .multilineTextAlignment(.leading)
+            
+            RedButton {
+                Text("Continue")
+            } action: {
+                // here we will submit the request and create validation
+            }
+        }
     }
 }
 
