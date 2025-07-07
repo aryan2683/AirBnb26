@@ -25,6 +25,7 @@ struct RedButton<Content: View> : View {
         }
         .frame(width: .screenWidthRatio(0.9))
         .background(Color.red.opacity(0.8))
+        .padding(2)
         .cornerRadius(8)
     }
 }

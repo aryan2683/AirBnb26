@@ -5,7 +5,7 @@ struct InfoBox: View {
     var countryCode: String
     @Binding var phoneNumber: String
     @FocusState private var focusedField: Field?
-    
+    var onTap : ()-> Void
     enum Field: Hashable {
         case countryRegion
         case phoneNumber
@@ -29,7 +29,7 @@ struct InfoBox: View {
                     .foregroundColor(.gray)
             }
             .padding(8)
-            .contentShape(Rectangle()) // makes whole area tappable
+            .contentShape(Rectangle())
             .onTapGesture {
                 focusedField = .countryRegion
             }
@@ -41,7 +41,7 @@ struct InfoBox: View {
             Divider()
                 .background(Color.black)
             
-            // Bottom section: Phone number with floating label
+           
             ZStack(alignment: .leading) {
                 Text("Phone Number")
                     .foregroundColor(.gray)
@@ -57,6 +57,7 @@ struct InfoBox: View {
                     .padding(.top, (focusedField == .phoneNumber || !phoneNumber.isEmpty) ? 12 : 0)
                     .padding(10)
                     .accentColor(.black)
+                    .limitInputLength(value: $phoneNumber, length: 10)
             }
             .background(
                 RoundedCornersShape(corners: [.bottomLeft, .bottomRight], radius: 8)
@@ -77,7 +78,7 @@ struct InfoBox: View {
             RedButton {
                 Text("Continue")
             } action: {
-                // here we will submit the request and create validation
+               onTap()
             }
         }
     }
@@ -101,7 +102,7 @@ struct RoundedCornersShape: Shape {
 #Preview {
     InfoBox(
         headline: "Country/Region",
-        countryCode: "India (+91)",
-        phoneNumber: .constant("")
+        countryCode: "India (+91)", phoneNumber: .constant(""), onTap: {}
+        
     )
 }

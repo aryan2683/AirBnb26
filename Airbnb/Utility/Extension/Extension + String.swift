@@ -12,5 +12,10 @@ extension String {
     static let loginOrSignIn = "Log in or sign up"
     static let countryRegion = "Country/Region"
     static let callDisclaimerText = "We'll call or text you to confirm your number.Standard message and data rates apply."
+    
+    static let emailSignin = "Continue with email"
+    static let appleSignin = "Continue with Apple"
+    static let googleSignin = "Continue with Google"
+    static let facebookSignin = "Continue with Facebook"
 }
 
